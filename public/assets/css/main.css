@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+h1{
+    font-family: 'WindSong', cursive;
+    font-size: 10rem;
+    margin: 0 auto;
+    color: #009432;
+
+}
+.neonText {
+    width: 75%;
+    margin: auto auto;
+    color: #fff;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #2ed573,
+            0 0 82px #2ed573,
+            0 0 92px #2ed573,
+            0 0 102px #2ed573,
+            0 0 151px #2ed573;
+    border: 0.2rem solid #fff;
+
+    padding: 9rem;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #2ed573,
+    0 0 0.8rem #2ed573,
+    0 0 2.8rem #2ed573,
+    inset 0 0 1.3rem #2ed573;
+}
+.logo{
+    padding-top: 20vh;
+}
