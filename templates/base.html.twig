@@ -23,6 +23,39 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ohana Studio</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                            </li>
+                            <div class="navbar-item-custom">
+                                {% if app.user %}
+                                    <a href="{{ path('app_home') }}" class="login-group">Mon compte <small>({{ app.user.firstname }})</small> </a> | <a href="{{ path('app_logout') }}" class="login-group">Deconnexion</a>
+                                {% else %}
+                                    <a href="{{ path('app_login') }}" class="login-group">Connexion</a> | <a href="{{ path('app_register') }}" class="login-group">Inscription</a>
+                                {% endif %}
+                            </div>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div id="hero" class="vh-100" style="background-size:cover;background: url('{{ asset('assets/img/bgtest2.jpg') }}')">
+                <div class="mx-auto logo">
+                    <h1 class="text-center neonText my-auto">Ohana Studio</h1>
+                </div>
+
+            </div>
+        </header>
         {% block body %}{% endblock %}
     </body>
 
