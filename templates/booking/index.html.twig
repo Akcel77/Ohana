@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookingController!{% endblock %}
+
+{% block body %}
+    <div class="w-50 mx-auto my-5">
+        {{ form_start(form) }}
+        {{ form_row(form.Prestation) }}
+        <button type="submit" class="btn btn-success">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
