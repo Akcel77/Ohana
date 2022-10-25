@@ -35,15 +35,20 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Accueil</a>
                             </li>
-                            <div class="navbar-item-custom">
-                                {% if app.user %}
-                                    <a href="{{ path('app_home') }}" class="login-group">Mon compte <small>({{ app.user.firstname }})</small> </a> | <a href="{{ path('app_logout') }}" class="login-group">Deconnexion</a>
-                                {% else %}
-                                    <a href="{{ path('app_login') }}" class="login-group">Connexion</a> | <a href="{{ path('app_register') }}" class="login-group">Inscription</a>
-                                {% endif %}
-                            </div>
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ path('admin') }}">(Admin)</a>
+                                </li>
+                            {% endif %}
 
                         </ul>
+                        <div class="navbar-item-custom">
+                            {% if app.user %}
+                                <a href="{{ path('app_home') }}" class="login-group">Mon compte <small>({{ app.user.firstname }})</small> </a> | <a href="{{ path('app_logout') }}" class="login-group">Deconnexion</a>
+                            {% else %}
+                                <a href="{{ path('app_login') }}" class="login-group">Connexion</a> | <a href="{{ path('app_register') }}" class="login-group">Inscription</a>
+                            {% endif %}
+                        </div>
 
                     </div>
                 </div>
